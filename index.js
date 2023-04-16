@@ -20,7 +20,7 @@ app.use('/tv',tvRouter);
 app.use('/phone',phoneRouter);
 app.use('/laptop',laptopRouter);
 app.use('/cart',cartRouter);
-app.use('/',authRouter);
+app.use('/user',authRouter);
 
 const PORT = process.env.PORT || 8080
 
