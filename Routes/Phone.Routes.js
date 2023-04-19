@@ -26,7 +26,15 @@ phoneRouter.get('/',async(req,res)=>{
     }
 })
 
-
+phoneRouter.delete('/:id',async(req,res)=>{
+    try{
+         const phoneda = await PhoneModel.findByIdAndDelete({_id:req.params.id});
+         res.status(200).send(phoneda)
+    }
+    catch(err){
+        res.status(500).send({message:err.message})
+    }
+})
 
 phoneRouter.get('/:id',async(req,res)=>{
     try{

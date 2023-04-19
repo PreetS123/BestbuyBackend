@@ -26,6 +26,15 @@ tvRouter.get('/',async(req,res)=>{
     }
 })
 
+tvRouter.delete('/:id',async(req,res)=>{
+    try{
+         const tvda = await tvModel.findByIdAndDelete({_id:req.params.id});
+         res.status(200).send(tvda)
+    }
+    catch(err){
+        res.status(500).send({message:err.message})
+    }
+})
 
 
 tvRouter.get('/:id',async(req,res)=>{

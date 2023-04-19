@@ -26,7 +26,15 @@ laptopRouter.get('/',async(req,res)=>{
     }
 })
 
-
+laptopRouter.delete('/:id',async(req,res)=>{
+    try{
+         const laptopda = await laptopModel.findByIdAndDelete({_id:req.params.id});
+         res.status(200).send(laptopda)
+    }
+    catch(err){
+        res.status(500).send({message:err.message})
+    }
+})
 
 laptopRouter.get('/:id',async(req,res)=>{
     try{

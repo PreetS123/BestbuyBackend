@@ -12,6 +12,8 @@ const laptopSchema = new mongoose.Schema({
   price: { type: String, required: true },
   print: { type: String, required: true },
   offer: { type: String, required: false },
+  brand:{type:String,required:true},
+  color:{type:String,required:true}
 });
 
 const laptopModel = mongoose.model("laptopdata", laptopSchema);
