@@ -7,6 +7,12 @@ app.use(express.json())
 app.use(cors())
 
 const connection=require('./config');
+
+
+
+
+
+
 const tvRouter= require('./Routes/Tv.Routes');
 const phoneRouter= require('./Routes/Phone.Routes');
 const laptopRouter= require('./Routes/Laptop.Routes');
